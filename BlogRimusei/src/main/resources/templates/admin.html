@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{static/vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{static/vendors/base/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{static/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{static/favicon.png}" />
+  <script th:src="@{static/js/jquery-2.1.4.min.js}"></script>
+  <script th:src="@{static/js/jquery.cookie.js}"></script>
+</head>
+
+<body>
+  <div class=" container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="/"><img th:src="@{static/images/logo.svg}" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+          </button>
+        </div>  
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img th:src="@{static/images/face5.jpg}" alt="profile"/>
+              <span class="nav-profile-name" th:text="${#session.getAttribute('name')}">-</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="/logout">
+                <i class="mdi mdi-logout text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                    <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Blog</button>
+                    <table id="mytable" style="width:100%;margin-top:20px"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2023</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+    </div>
+
+  </div>
+  <!-- modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h4 class="modal-title" id="myModalLabel">Blog Info</h4>
+	            </div>
+	            <div class="modal-body">
+		            <form class="forms-sample">
+	                    <input type="hidden" id="blogid">
+	                    <div class="form-group">
+	                      <label for="title">title</label>
+	                      <input type="text" class="form-control" id="blogtitle" placeholder="Blog title">
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="exampleInputPassword1">tag</label>
+	                      <input type="text" class="form-control" id="blogtag" placeholder="Blog tag">
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="exampleInputEmail1">desc</label>
+	                      <textarea rows="10" style="width:100%" class="form-control" id="blogdesc" placeholder="Blog desc"></textarea>
+	                    </div>
+                  </form>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	                <button type="button" class="btn btn-primary" onclick="save()">Submit</button>
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+  
+  <!-- modal -->
+  <!-- plugins:js -->
+  <script th:src="@{static/vendors/base/vendor.bundle.base.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{static/js/off-canvas.js}"></script>
+  <script th:src="@{static/js/hoverable-collapse.js}"></script>
+  <script th:src="@{static/js/template.js}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <link rel="stylesheet" th:href="@{static/bootstrap-table/bootstrap-table.min.css}">
+  <script th:src="@{static/bootstrap-table/bootstrap-table.min.js}"></script>
+  <!-- End custom js for this page-->
+  <script type="text/javascript">
+  	$('#myModal').on('hide.bs.modal', function () {
+	  $("#blogid").val('');
+	  $("#blogtitle").val('');
+	  $("#blogtag").val('');
+	  $("#blogdesc").val('');
+	})
+	function save(){
+  	  var blogid = $("#blogid").val();
+  	  var blogtitle = $("#blogtitle").val();
+  	  var blogtag = $("#blogtag").val();
+  	  var blogdesc = $("#blogdesc").val();
+  	  if(!blogtitle){
+  		  alert('Please input title');
+  		  return false;
+  	  }
+  	  if(!blogdesc){
+  		  alert('Please input describe');
+  		  return false;
+  	  }
+  	  var data = {
+  			blogid   : blogid,  
+  			blogtitle: blogtitle,
+  			blogdesc : blogdesc,
+  			blogtag  : blogtag,
+  	  }
+	  	$.ajax({
+	  		type : 'POST',
+	  		contentType : 'application/json',
+	  		url : 'blog/add',
+	  		data : JSON.stringify(data),
+	  		dataType : 'json',
+	  		success : function(result) {
+	  			if(result*1 == 1){
+	  			  	list()
+	  				$('#myModal').modal('hide');
+	  			}
+	  			alert(result == 1?'Success !':'Fail !');
+	  		},
+	  		error : function(jqXHR, textStatus, errorThrown) {
+	  			
+	  		}
+	  	});
+  	}
+  	function edit(id){
+  		var rows = $('#mytable').bootstrapTable('getRowByUniqueId',id);
+  		$("#blogid").val(rows.blogid);
+  	    $("#blogtitle").val(rows.blogtitle);
+  	    $("#blogtag").val(rows.blogtag);
+  	    $("#blogdesc").val(rows.blogdesc);
+		$('#myModal').modal('show');
+  	}
+  	function del(id){
+  		if (confirm("Do you sure to delete ?")) {
+  			$.ajax({
+  		  		type : 'GET',
+  		  		contentType : 'application/json',
+  		  		url : 'blog/del?id=' + id,
+  		  		dataType : 'json',
+  		  		success : function(result) {
+  		  			if(result*1 == 1){
+  		  			  	list()
+  		  				$('#myModal').modal('hide');
+  		  			}
+  		  			alert(result == 1?'Success !':'Fail !');
+  		  		},
+  		  		error : function(jqXHR, textStatus, errorThrown) {
+  		  			
+  		  		}
+  		  	});
+  		}
+  	}
+  	list()
+  	function list(){
+  		$('#mytable').bootstrapTable("destroy");
+  		$('#mytable').bootstrapTable({
+  			url : 'blog/list?title=',
+  			striped: true,
+  			search : false,
+  			uniqueId: "blogid",
+  			pagination: true, // 是否分页
+  			columns: [{
+  					field: 'blogtitle',
+  					title: 'blog title'
+  				},{
+  					field: 'blogtag',
+  					title: 'blog tag'
+  				},{
+  					field: 'blogdesc',
+  					title: 'blog desc'
+  				},{
+  					field: 'blogtime',
+  					title: 'blog time'
+  				},{
+  					field: 'blogid',
+  					title: 'operation',
+  					formatter: function(value, row, index) {
+  						var result = "";
+  						result += "<a href='javascript:edit(\""+value+"\");' class='btn btn-md btn_edit' style='color:#d78f43' title='Edit'><i class='mdi mdi-border-color'></i></a>";
+  						result += "<a href='javascript:del(\""+value+"\");' class='btn btn-md btn_del' style='color:red' title='Delete'><i class='mdi mdi-delete-forever'></i></a>";
+  						return result;
+  					}
+  				}
+  			]
+  		});
+  		/* $.ajax({
+	  		type : 'GET',
+	  		contentType : 'application/json',
+	  		url : 'blog/list',
+	  		dataType : 'json',
+	  		success : function(result) {
+	  			console.log(result);
+	  		},
+	  		error : function(jqXHR, textStatus, errorThrown) {
+	  			
+	  		}
+	  	}); */
+  	}
+  </script>
+</body>
+
+</html>
