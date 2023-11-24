@@ -88,7 +88,7 @@ public class BlogService {
 		vo.setBlogdesc(info.getBlogdesc());
 		vo.setBloguser(info.getBloguser());
 		Optional<UserInfo> userinfo = userRepository.findById(info.getBloguser());
-		if(!userinfo.isEmpty()) {
+		if(null != userinfo.get()) {
 			vo.setUsername(userinfo.get().getName());
 		}
 		return vo;

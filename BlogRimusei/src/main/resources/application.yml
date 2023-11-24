@@ -1,0 +1,43 @@
+#tomcat config
+server :
+  port : 8090
+  tomcat :
+    uri-encoding : UTF-8
+    max-connections: 200000
+    max-http-form-post-size: 9000000
+    threads:
+      max: 128
+      min-spare: 5
+spring :
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      maxFileSize : 30MB
+    max-connections: 200000
+    max-http-post-size: 9000000
+  mvc:
+    static-path-pattern : /static/**
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  thymeleaf:
+    model: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource: 
+    url: jdbc:postgresql://localhost:5433/blog
+    username: postgres
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true

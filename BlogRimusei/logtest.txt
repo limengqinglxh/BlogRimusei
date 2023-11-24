@@ -23,3 +23,59 @@
 2023-11-24 01:34:46.179  INFO 28497 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-24 01:34:46.180  INFO 28497 --- [RMI TCP Connection(6)-127.0.0.1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2023-11-24 01:34:46.181  INFO 28497 --- [RMI TCP Connection(6)-127.0.0.1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-11-24 09:02:45.789  INFO 32633 --- [main] com.blog.StartApp                        : Starting StartApp using Java 1.8.0_392 on limengqingdeAir with PID 32633 (/Users/limengqing/Desktop/Blog/BlogRimusei/BlogRimusei/target/classes started by limengqing in /Users/limengqing/Desktop/Blog/BlogRimusei/BlogRimusei)
+2023-11-24 09:02:45.790  INFO 32633 --- [main] com.blog.StartApp                        : No active profile set, falling back to default profiles: default
+2023-11-24 09:02:46.193  INFO 32633 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-24 09:02:46.222  INFO 32633 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+2023-11-24 09:02:46.483  INFO 32633 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-24 09:02:46.489  INFO 32633 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-24 09:02:46.489  INFO 32633 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-11-24 09:02:46.523  INFO 32633 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-24 09:02:46.523  INFO 32633 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 597 ms
+2023-11-24 09:02:46.553  INFO 32633 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-11-24 09:02:46.632  INFO 32633 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-11-24 09:02:46.697  INFO 32633 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-24 09:02:46.730  INFO 32633 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2023-11-24 09:02:46.827  INFO 32633 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-24 09:02:46.963  INFO 32633 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-11-24 09:02:47.268  INFO 32633 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-24 09:02:47.273  INFO 32633 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-24 09:02:47.460  WARN 32633 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-24 09:02:47.559  INFO 32633 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-11-24 09:02:47.669  INFO 32633 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-24 09:02:47.674  INFO 32633 --- [main] com.blog.StartApp                        : Started StartApp in 2.074 seconds (JVM running for 2.357)
+2023-11-24 09:03:25.555  INFO 32633 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-24 09:03:25.555  INFO 32633 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-24 09:03:25.556  INFO 32633 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-24 09:05:19.977  INFO 32633 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-24 09:05:19.993  INFO 32633 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-24 09:05:19.996  INFO 32633 --- [RMI TCP Connection(9)-127.0.0.1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-11-24 09:05:19.998  INFO 32633 --- [RMI TCP Connection(9)-127.0.0.1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-11-24 09:07:24.815  INFO 32716 --- [main] com.blog.StartApp                        : Starting StartApp using Java 1.8.0_392 on limengqingdeAir with PID 32716 (/Users/limengqing/Desktop/Blog/BlogRimusei/BlogRimusei/target/classes started by limengqing in /Users/limengqing/Desktop/Blog/BlogRimusei/BlogRimusei)
+2023-11-24 09:07:24.817  INFO 32716 --- [main] com.blog.StartApp                        : No active profile set, falling back to default profiles: default
+2023-11-24 09:07:25.179  INFO 32716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-24 09:07:25.203  INFO 32716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2023-11-24 09:07:25.446  INFO 32716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-24 09:07:25.451  INFO 32716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-24 09:07:25.451  INFO 32716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-11-24 09:07:25.483  INFO 32716 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-24 09:07:25.483  INFO 32716 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 532 ms
+2023-11-24 09:07:25.510  INFO 32716 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-11-24 09:07:25.581  INFO 32716 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-11-24 09:07:25.634  INFO 32716 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-24 09:07:25.656  INFO 32716 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2023-11-24 09:07:25.742  INFO 32716 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-24 09:07:25.866  INFO 32716 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-11-24 09:07:26.153  INFO 32716 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-24 09:07:26.162  INFO 32716 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-24 09:07:26.341  WARN 32716 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-24 09:07:26.439  INFO 32716 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-11-24 09:07:26.542  INFO 32716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-24 09:07:26.548  INFO 32716 --- [main] com.blog.StartApp                        : Started StartApp in 1.901 seconds (JVM running for 2.159)
+2023-11-24 09:08:03.104  INFO 32716 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-24 09:08:03.105  INFO 32716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-24 09:08:03.106  INFO 32716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-24 09:20:40.194  INFO 32716 --- [RMI TCP Connection(20)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-24 09:20:40.219  INFO 32716 --- [RMI TCP Connection(20)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-24 09:20:40.224  INFO 32716 --- [RMI TCP Connection(20)-127.0.0.1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-11-24 09:20:40.227  INFO 32716 --- [RMI TCP Connection(20)-127.0.0.1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
