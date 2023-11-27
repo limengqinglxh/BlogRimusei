@@ -7,9 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import com.blog.entity.UserInfo;
 
-@Repository
+@Repository // このインターフェースがリポジトリ層のコンポーネントであることを示すアノテーションです。
 public interface UserRepository extends JpaRepository<UserInfo, Long> {
 
-	@Query(value = "SELECT * FROM userinfo where account = :account limit 1", nativeQuery = true)
-	UserInfo findUserByAccount(@Param("account") String account);
+    // 特定のアカウント名に基づいてユーザー情報を検索するクエリメソッドです。
+    @Query(value = "SELECT * FROM userinfo where account = :account limit 1", nativeQuery = true)
+    UserInfo findUserByAccount(@Param("account") String account);
 }

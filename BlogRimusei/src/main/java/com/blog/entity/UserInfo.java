@@ -9,64 +9,65 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "userinfo")
+@Entity // このクラスがJPAのエンティティであることを示すアノテーションです。
+@Table(name = "userinfo") // このエンティティがマッピングするデータベーステーブルの名前を指定します。
 public class UserInfo {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "account")
-	private String account;
+    @Id // このフィールドがエンティティのプライマリキー（主キー）であることを示します。
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // プライマリキーの値はデータベースが自動生成することを示します。
+    private Long id; // ユーザーのユニークなID。
 
-	@Column(name = "password")
-	private String password;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "createTime")
-	private Date createTime;
+    @Column(name = "account") // このフィールドがaccount列にマッピングされることを示します。
+    private String account; // ユーザーのアカウント名。
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "password") // このフィールドがpassword列にマッピングされることを示します。
+    private String password; // ユーザーのパスワード。
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "name") // このフィールドがname列にマッピングされることを示します。
+    private String name; // ユーザーの名前。
+    
+    @Column(name = "createTime") // このフィールドがcreateTime列にマッピングされることを示します。
+    private Date createTime; // アカウントの作成時間。
 
-	public String getAccount() {
-		return account;
-	}
+    // 以下は各フィールドのgetterおよびsetterメソッドです。
+    public Long getId() {
+        return id;
+    }
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getAccount() {
+        return account;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+    
 }

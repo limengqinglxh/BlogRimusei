@@ -9,15 +9,18 @@ import org.springframework.stereotype.Repository;
 
 import com.blog.entity.BlogInfo;
 
-@Repository
+@Repository // このインターフェースがリポジトリ層のコンポーネントであることを示すアノテーションです。
 public interface BlogRepository extends JpaRepository<BlogInfo, Long> {
 
-	@Query(value = "SELECT * FROM blogInfo where bloguser = :userId", nativeQuery = true)
-	List<BlogInfo> findAllByTitle(@Param("userId") Long userId);
+    // 特定のユーザーIDによる全てのブログ情報を取得するクエリメソッドです。
+    @Query(value = "SELECT * FROM blogInfo where bloguser = :userId", nativeQuery = true)
+    List<BlogInfo> findAllByTitle(@Param("userId") Long userId);
 
-	@Query(value = "SELECT * FROM blogInfo where bloguser = :userId and blogtitle = :title", nativeQuery = true)
-	List<BlogInfo> findAllByTitle2(@Param("userId") Long userId, @Param("title") String title);
+    // 特定のユーザーIDとタイトルに基づいてブログ情報を取得するクエリメソッドです。
+    @Query(value = "SELECT * FROM blogInfo where bloguser = :userId and blogtitle = :title", nativeQuery = true)
+    List<BlogInfo> findAllByTitle2(@Param("userId") Long userId, @Param("title") String title);
 
-	@Query(value = "SELECT * FROM blogInfo where blogtitle = :title", nativeQuery = true)
-	List<BlogInfo> findAllByTitle3(@Param("title") String title);
+    // 特定のタイトルに基づいて全てのブログ情報を取得するクエリメソッドです。
+    @Query(value = "SELECT * FROM blogInfo where blogtitle = :title", nativeQuery = true)
+    List<BlogInfo> findAllByTitle3(@Param("title") String title);
 }
